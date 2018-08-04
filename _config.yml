@@ -1,0 +1,6 @@
+name: Job Vranish's Braindump
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
+plugins:
+  - jekyll-sitemap
+
