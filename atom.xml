@@ -5,10 +5,10 @@ layout: feed
 <feed xmlns="http://www.w3.org/2005/Atom">
 
 	<title>Job Vranish's Blog</title>
-	<link href="http://blog.jobvranish.com/blog/atom.xml" rel="self"/>
-	<link href="http://blog.jobvranish.com/blog"/>
+	<link href="http://blog.jobvranish.com/atom.xml" rel="self"/>
+	<link href="http://blog.jobvranish.com"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
-	<id>http://blog.jobvranish.com/blog</id>
+	<id>http://blog.jobvranish.com</id>
 	<author>
 		<name>Job Vranish</name>
 		<email>blog -at- jobvranish.com</email>
