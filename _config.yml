@@ -1,4 +1,4 @@
-name: Job Vranish's Braindump
+name: Job Vranish's Blog
 markdown: kramdown
 permalink: /:year/:month/:day/:title
 plugins:
