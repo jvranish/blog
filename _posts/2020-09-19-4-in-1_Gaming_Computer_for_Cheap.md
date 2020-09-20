@@ -16,13 +16,13 @@ And I actually got it working!, with only one real GPU, an integrated GPU, and j
 
 ![672FA936-FFE2-4737-96C8-043080B46349_1_105_c](/4-in-1-computer.assets/672FA936-FFE2-4737-96C8-043080B46349_1_105_c.jpg)
 
-There's no reason one couldn't just make a setup like this using KVM/QEMU on linux with only free software (and many people do, you can find some good instructions for that [here](https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF)), but I ended up using [Unraid](https://www.unraid.net/) to do it. Unraid is still using KVM/QEMU on linux, but they have done a lot of extra work to make sure the kernel/KVM/QEMU have all the latest patches to work around the most common bugs and issues, and they have a nice web GUI that make the basic VM setup and PCI passthrough super easy. I still ended up needing to do more fine-grained editing of my VM configs, but it's _so_ much easier to make a few tweaks on an already mostly working config, than it is to make a working config from scratch.
+There's no reason one couldn't just make a setup like this using KVM/QEMU on linux with only free software (and many people do, you can find some good instructions for that [here](https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF)), but I ended up using [Unraid](https://www.unraid.net/) to do it. Unraid is still using KVM/QEMU on linux, but they have done a lot of extra work to make sure the kernel/KVM/QEMU have all the latest patches to work around the most common bugs and issues, and they have a nice web GUI that makes the basic VM setup and PCI passthrough super easy. I still ended up needing to do more fine-grained editing of my VM configs, but it's _so_ much easier to make a few tweaks on an already mostly working config, than it is to make a working config from scratch.
 
 It turns out there are still a lot of gotcha's and annoyances in building and operating a setup like this, and I was extremely lucky that I was able to get everything to work so well on my old computer. But I was hooked and decided that for my next gaming computer, I was going to do this properly.
 
 ## Goals for my dream 4-in-1 computer:
 
-Minecraft would run _ok_ with only one core, but there was definitely some occasional stuttering. I needed more cores. At the very least I wanted to support 3 gamers at once, sometimes I want to play games when the kids are playing after all. And if I'm going to support 3, I might as well make it 4, so the whole family can play at once :smile:  So 4 GPUs, and say, at least 2 cores per-gamer + a few extra cores for things like a minecraft server :grinning: 12 cores ought to do it.
+Minecraft would run _ok_ with only one core, but there was definitely some occasional stuttering. I needed more cores. At the very least I wanted to support 3 gamers at once, sometimes I want to play games when the kids are playing after all. And if I'm going to support 3, I might as well make it 4, so the whole family can play at once 🙂  So 4 GPUs, and say, at least 2 cores per-gamer + a few extra cores for things like a minecraft server 😀 12 cores ought to do it.
 
 One particular annoyance with my previous setup was that USB devices don't hotplug into VMs. If you disconnect a USB device that's attached to a VM, you pretty much have to restart the VM if you want to re-attach it, which is pretty annoying. The best way to get around this is to passthrough a PCIe USB controller to the VM, then USB behaves just like you'd expect. 
 
@@ -36,15 +36,15 @@ So the rough specs for my 4 gamer machine:
 - 4 GTX1050+ GPUs
 - Extra PCIe slot for dedicated USB controller
 
-## Figuring out how to get 4 GPUs on consumer hardware
+## Figuring out how to get 4 GPUs to run on consumer hardware
 
-But one of the things you'll notice when looking for Ryzen AM4 motherboards that have slots for 4 GPUs + a USB PCIe card, is that there aren't any :sob:
+But one of the things you'll notice when looking for Ryzen AM4 motherboards that have slots for 4 GPUs + a USB PCIe card, is that there aren't any 😭
 
 "Ah! that shouldn't be a problem!", I thought, "I'll just wait for the the Zen 2 Threadripper release just around the corner, I can get Threadripper motherboards for everything I need, and they should have plenty of PCIe lanes to spare!"
 
-But when the new Threadrippers were announced, the _smallest_ of them was a 24-core $1500 mosnster, which was most of my budget in just one part. The Threadripper route was just too expensive :cry:
+But when the new Threadrippers were announced, the _smallest_ of them was a 24-core $1500 mosnster, which was most of my budget in just one part. The Threadripper route was just too expensive 😢
 
-I _almost_ settled for just a 3 gamer build. A less crazy person might have, but this setup is already so crazy that I decided I wasn't going let something simple like my motherboard not having enough slots stand in my way :D
+I _almost_ settled for just a 3 gamer build. A less crazy person might have, but this setup is already so crazy that I decided I wasn't going let something simple like my motherboard not having enough slots stand in my way 😀
 
 My solution to not having enough slots was to use this crazy [m.2 to x16 adapter](https://www.amazon.com/ADT-Link-Extender-Graphics-Adapter-PCI-Express/dp/B07YDH8KW9). But this added some extra constraints. I needed some extra M.2 slots (and ones that didn't conflict with other PCIe slots, which some do). One might think that only having the 4 PCIe lanes privided to the M.2 slot might hinder performance, but it turns out there is essentially zero performance difference running GPUs at 4x vs 16x. This might change with latest RTX 3000 cards, but is still true for the moment.
 
@@ -78,7 +78,7 @@ After lots of experimentation I landed on using [SteamLinks](https://en.wikipedi
 
 I'm not streaming my primary gaming VM, that one is hooked up to monitor, keyboard, and mouse directly.
 
-I also got some extra NAS drives. I mean if it's already going to be 4 computers, why not also a NAS? I couldn't help myself :grinning:
+I also got some extra NAS drives. I mean if it's already going to be 4 computers, why not also a NAS? I couldn't help myself 😀
 
 
 ## The final hardware:
@@ -120,7 +120,7 @@ I also got some extra NAS drives. I mean if it's already going to be 4 computers
 - Old monitor and keyboard and mouse left over from old computer
 
 Total Cost: $3005
-Pretty pricy, but I guess not terrible maybe for 4 gaming computers + a NAS? :man_shrugging:
+Pretty pricy, but I guess not terrible maybe for 4 gaming computers + a NAS? 🤷‍♂️
 
 ## Putting it together:
 
@@ -179,4 +179,4 @@ A picture taken today showing that the desk cabinets can be closed up when not i
 
 These VMs are _major_ overkill for AOE2. Each of them have about 2x the CPU power of my old computer, and could all play something like Subnautica or Deus Ex: Mankid Divided all at the same time and still get 1080p @ 60fps framerates. 
 
-There was quite a bit of additional software/VM configuration to get optimal performance and to make sure that high load on one VM doesn't cause degrated performance on another. But that's probably a good topic for another post :smile: 
+There was quite a bit of additional software/VM configuration to get optimal performance and to make sure that high load on one VM doesn't cause degrated performance on another. But that's probably a good topic for another post 🙂
