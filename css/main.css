@@ -1,6 +1,5 @@
 
 nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
     list-style: none;
     font-weight: bold;
@@ -15,14 +14,29 @@ footer {
     font-size: .8em;
 }
 
-ul.posts {
-    margin: 20px auto 40px;
-    font-size: 1.5em;
+a {
+  text-decoration: none;
 }
 
-ul.posts li {
-    list-style: none;
+a:hover {
+    cursor: pointer;
+  text-decoration: underline;
 }
+
+
+a.post-tile {
+   padding-bottom: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-top: 10px;
+   margin-bottom: 20px ;
+   border-radius: 10px;
+   background-color: var(--nc-bg-2);
+   color: unset;
+   display: block;
+   text-decoration: none;
+}
+
 
 .license {
     font-family: monospace;
