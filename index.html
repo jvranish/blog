@@ -7,7 +7,7 @@ title: My blog
 
 	  {% for post in site.posts %}
 			<!-- <div class="post-tile"> -->
-				<a href="{{ post.url }}" title="{{ post.title }}" class="post-tile">
+				<a href="{{ post.url }}" title="{{ post.title }}" class="post-tile" style="text-decoration: none">
 				<div style="padding-bottom: 10px;"><h4>{{ post.title }}</h2></div>
 				<p>{{ post.excerpt }}</p>
 				<div style="color: var(--nc-tx-2); font-size: 0.6em;">{{ post.date | date_to_string }}</div>
