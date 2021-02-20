@@ -6,3 +6,24 @@ TODO:
 
 - add photo, improve about
 - add icons and improved formatting?
+
+
+## To build locally with jekyll:
+
+First install:
+- direnv
+- rbenv
+
+First time setup:
+```
+direnv allow
+bundle install
+```
+
+then
+
+```
+jekyll serve
+```
+
+then open [http://localhost:4000/](http://localhost:4000/)
