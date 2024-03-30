@@ -7,7 +7,7 @@ date: 2020-03-07
 I recently had some major performance issues when running Age of Empires II: Definitive Edition over Steam Remote Play. The game would run fine locally, and also when streaming via Parsec, but over Remote Play I would only get about 15fps.
 
 What was extra weird is the game would run perfectly smoothly as long it wasn't exclusively in the foreground. 
-Press the start menu, or open an overlay and the game in the background would jump to a perfectly smooth 60fps but re-forground it and it would immediately drop back down to 15fps.
+Press the start menu, or open an overlay and the game in the background would jump to a perfectly smooth 60fps but re-foreground it and it would immediately drop back down to 15fps.
 
 When I enable the diagnostic info it told me that there was a "slow encode" issue and that my encoder was:
 
